@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import ChartTemplateComponent from './components/charts/chartTemplateComponent'
+import {animals, carts, soccerTeams} from './data/DataChart'
 
 function App() {
+  const colors = ["tomato", "gold", "cyan", "orange", "navy"]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Prueba de charts</h1>
+      <div className="chartsContainer">
+        <div className="chartBlock">
+          <ChartTemplateComponent renderData={animals} renderColors={colors} />
+        </div>
+        <div className="chartBlock">
+          <ChartTemplateComponent renderData={carts} renderColors={colors} />
+        </div>
+        <div className="chartBlock">
+          <ChartTemplateComponent renderData={soccerTeams} renderColors={colors} />
+        </div>
+      </div>
     </div>
   );
 }
